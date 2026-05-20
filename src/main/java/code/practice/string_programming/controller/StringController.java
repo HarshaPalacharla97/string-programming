@@ -20,7 +20,6 @@ public class StringController {
 
     @GetMapping("/reverse")
     public void reversal(){
-        System.out.println("Enter a String Value to Return :: ");
         stringService.stringReverse(ScannerUtility.inputString());
     }
 
@@ -39,9 +38,18 @@ public class StringController {
         stringService.charFrequencyString(ScannerUtility.inputString());
     }
 
+    @GetMapping("/anagram-check")
+    public void anagramCheck(){
+        stringService.anagramString(ScannerUtility.inputString(), ScannerUtility.inputString());
+    }
+
+    @GetMapping("/string-palindrome")
+    public void palindromeString(){
+        stringService.stringPalindrome(ScannerUtility.inputString());
+    }
+
     @GetMapping("/dynamic-sub-string")
     public void dynamicSubString(){
-
         subStringService.dynamicLengthSubString(ScannerUtility.inputString());
     }
 
